@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -28,14 +29,20 @@ namespace ProyectoFinal.Models
         [Required]
         public string Estatus { get; set; }
 
-        [Display(Name ="Departamento")]
+
+        public virtual Departamentos departamento { get; set; }
+        [Display(Name = "departamento")]
+        [ForeignKey("departamento")]
+        [Required]
         public int IdDepartamento { get; set; }
-        public Departamentos departamento { get; set; }
+        
 
+        
+        public virtual Cargos cargo { get; set; }
         [Display(Name = "Cargo")]
+        [ForeignKey("cargo")]
+        [Required]
         public int IdCargo { get; set; }
-        public Cargos cargo { get; set; }
-
 
 
     }

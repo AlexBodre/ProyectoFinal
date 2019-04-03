@@ -17,7 +17,8 @@ namespace ProyectoFinal.Controllers
         // GET: Empleados
         public ActionResult Index()
         {
-            return View(db.Empleados.ToList());
+            var empleados = db.Empleados.Include(e => e.cargo).Include(e => e.departamento);
+            return View(empleados.ToList());
         }
 
         // GET: Empleados/Details/5
@@ -38,12 +39,14 @@ namespace ProyectoFinal.Controllers
         // GET: Empleados/Create
         public ActionResult Create()
         {
+            ViewBag.IdCargo = new SelectList(db.Cargos, "Id", "Cargo");
+            ViewBag.IdDepartamento = new SelectList(db.Departamentos, "Id", "Nombre");
             return View();
         }
 
         // POST: Empleados/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,CodigoEmpleado,Nombre,Apellido,Telefono,FechaIngreso,Salario,Estatus,IdDepartamento,IdCargo")] Empleados empleados)
@@ -55,6 +58,8 @@ namespace ProyectoFinal.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.IdCargo = new SelectList(db.Cargos, "Id", "Cargo", empleados.IdCargo);
+            ViewBag.IdDepartamento = new SelectList(db.Departamentos, "Id", "Nombre", empleados.IdDepartamento);
             return View(empleados);
         }
 
@@ -70,12 +75,14 @@ namespace ProyectoFinal.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.IdCargo = new SelectList(db.Cargos, "Id", "Cargo", empleados.IdCargo);
+            ViewBag.IdDepartamento = new SelectList(db.Departamentos, "Id", "Nombre", empleados.IdDepartamento);
             return View(empleados);
         }
 
         // POST: Empleados/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,CodigoEmpleado,Nombre,Apellido,Telefono,FechaIngreso,Salario,Estatus,IdDepartamento,IdCargo")] Empleados empleados)
@@ -86,6 +93,8 @@ namespace ProyectoFinal.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.IdCargo = new SelectList(db.Cargos, "Id", "Cargo", empleados.IdCargo);
+            ViewBag.IdDepartamento = new SelectList(db.Departamentos, "Id", "Nombre", empleados.IdDepartamento);
             return View(empleados);
         }
 
