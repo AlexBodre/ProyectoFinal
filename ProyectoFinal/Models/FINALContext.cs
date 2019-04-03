@@ -6,9 +6,9 @@ using System.Data.Entity;
 
 namespace ProyectoFinal.Models
 {
-    public class AppContext: DbContext
+    public class FINALContext: DbContext
     {
-        public AppContext()
+        public FINALContext()
             :base("Empleados")
         {
             

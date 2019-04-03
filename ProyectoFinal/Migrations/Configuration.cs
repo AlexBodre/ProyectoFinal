@@ -5,7 +5,7 @@ namespace ProyectoFinal.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ProyectoFinal.Models.AppContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ProyectoFinal.Models.FINALContext>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace ProyectoFinal.Migrations
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(ProyectoFinal.Models.AppContext context)
+        protected override void Seed(ProyectoFinal.Models.FINALContext context)
         {
             //  This method will be called after migrating to the latest version.
 

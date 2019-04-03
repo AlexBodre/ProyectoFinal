@@ -18,7 +18,11 @@ namespace ProyectoFinal.Models
         public string Apellido { get; set; }
         [Required]
         public string Telefono { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime FechaIngreso { get; set; }
+
         [Required]
         public Double Salario { get; set; }
         [Required]
