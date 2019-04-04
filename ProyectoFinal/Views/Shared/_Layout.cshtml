@@ -19,7 +19,7 @@
 
     <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-            <a class="navbar-brand" href="#">M&A solutions</a>
+            <a class="navbar-brand" href="http://localhost:58667/Home/Index">M&A solutions</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,8 +28,13 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="http://localhost:58667/Home/Index">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="http://localhost:58667/empleados">Mantenimiento</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mantenimiento</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="http://localhost:58667/empleados">Empleado</a>
+                            <a class="dropdown-item" href="http://localhost:58667/departamentos">Departamento</a>
+                            <a class="dropdown-item" href="http://localhost:58667/cargos">Cargo</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#">Procesos</a>
