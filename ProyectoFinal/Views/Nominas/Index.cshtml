@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ProyectoFinal.Models.Nomina>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AÑO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Montototal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AÑO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Montototal)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
