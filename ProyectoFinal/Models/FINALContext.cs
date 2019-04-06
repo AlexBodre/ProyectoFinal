@@ -19,5 +19,6 @@ namespace ProyectoFinal.Models
         public DbSet<Cargos> Cargos { get; set; }
         public DbSet<Nomina> Nominas { get; set; }
         public DbSet<Vacaciones> Vacaciones { get; set; }
+        public DbSet<Permisos> Permisos { get; set; }
     }
 }
