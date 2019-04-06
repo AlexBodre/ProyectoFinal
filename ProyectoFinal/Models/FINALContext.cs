@@ -18,6 +18,6 @@ namespace ProyectoFinal.Models
         public DbSet<Departamentos> Departamentos { get; set; }
         public DbSet<Cargos> Cargos { get; set; }
         public DbSet<Nomina> Nominas { get; set; }
-
+        public DbSet<Vacaciones> Vacaciones { get; set; }
     }
 }
