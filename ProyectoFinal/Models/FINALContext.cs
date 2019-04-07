@@ -21,5 +21,9 @@ namespace ProyectoFinal.Models
         public DbSet<Vacaciones> Vacaciones { get; set; }
         public DbSet<Permisos> Permisos { get; set; }
         public DbSet<Licencias> Licencias { get; set; }
+        public DbSet<TipoSalida> TipoSalida { get; set; }
+        public DbSet<Salidas> Salidas { get; set; }
+        
+
     }
 }

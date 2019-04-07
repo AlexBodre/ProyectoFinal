@@ -141,6 +141,8 @@
     <Compile Include="Controllers\LicenciasController.cs" />
     <Compile Include="Controllers\NominasController.cs" />
     <Compile Include="Controllers\PermisosController.cs" />
+    <Compile Include="Controllers\SalidasController.cs" />
+    <Compile Include="Controllers\TipoSalidasController.cs" />
     <Compile Include="Controllers\VacacionesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -153,6 +155,8 @@
     <Compile Include="Models\Licencias.cs" />
     <Compile Include="Models\Nomina.cs" />
     <Compile Include="Models\Permisos.cs" />
+    <Compile Include="Models\Salidas.cs" />
+    <Compile Include="Models\TipoSalida.cs" />
     <Compile Include="Models\Vacaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -265,6 +269,16 @@
     <Content Include="Views\Licencias\Details.cshtml" />
     <Content Include="Views\Licencias\Edit.cshtml" />
     <Content Include="Views\Licencias\Index.cshtml" />
+    <Content Include="Views\TipoSalidas\Create.cshtml" />
+    <Content Include="Views\TipoSalidas\Delete.cshtml" />
+    <Content Include="Views\TipoSalidas\Details.cshtml" />
+    <Content Include="Views\TipoSalidas\Edit.cshtml" />
+    <Content Include="Views\TipoSalidas\Index.cshtml" />
+    <Content Include="Views\Salidas\Create.cshtml" />
+    <Content Include="Views\Salidas\Delete.cshtml" />
+    <Content Include="Views\Salidas\Details.cshtml" />
+    <Content Include="Views\Salidas\Edit.cshtml" />
+    <Content Include="Views\Salidas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
