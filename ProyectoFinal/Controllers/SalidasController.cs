@@ -15,9 +15,18 @@ namespace ProyectoFinal.Controllers
         private FINALContext db = new FINALContext();
 
         // GET: Salidas
-        public ActionResult Index()
+        public ActionResult Index(string fecha)
         {
+            
             var salidas = db.Salidas.Include(s => s.Empleado).Include(s => s.tipoSalida);
+
+            if (!String.IsNullOrEmpty(fecha))
+            {
+                string klk = $"{fecha}-01-1900";
+                DateTime kitipun = DateTime.ParseExact(klk, "MM-dd-yyyy", null);
+                salidas = salidas.Where(a => a.FechaSalida.Month == kitipun.Month);
+            }
+
             return View(salidas.ToList());
         }
 
