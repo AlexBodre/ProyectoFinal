@@ -15,9 +15,17 @@ namespace ProyectoFinal.Controllers
         private FINALContext db = new FINALContext();
 
         // GET: Permisos
-        public ActionResult Index()
+        public ActionResult Index(string nomb)
         {
             var permisos = db.Permisos.Include(p => p.Empleado);
+            var n = from s in db.Permisos select s;
+            if (!string.IsNullOrEmpty(nomb))
+            {
+
+                permisos= permisos.Where(s => s.Empleado.Nombre.Contains(nomb));
+
+             
+            }
             return View(permisos.ToList());
         }
 

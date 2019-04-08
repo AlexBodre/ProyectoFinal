@@ -9,43 +9,56 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Empleado.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Desde)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hasta)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comentarios)
-        </th>
-        <th></th>
-    </tr>
+@using (Html.BeginForm())
+{
+    <div class="form-actions no-color d-flex justify-content-between">
+        <input type="search" name="nomb" value="" class="form-control" placeholder="Buscar por nombre...">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Empleado.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Desde)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hasta)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comentarios)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
+        <input type="submit" value="Buscar" class="btn btn-outline-success form-control" />
+        <a href="http://localhost:58667/Permisos" class="btn btn-outline-success form-control">Volver a Lista</a>
+    </div>
 }
 
-</table>
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Empleado.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desde)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hasta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comentarios)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Empleado.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Desde)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hasta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comentarios)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>

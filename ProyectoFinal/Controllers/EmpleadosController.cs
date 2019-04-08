@@ -28,16 +28,10 @@ namespace ProyectoFinal.Controllers
             }
             else if (!string.IsNullOrEmpty(de))
             {
-                empleados= empleados.Where(s =>s.departamento.Nombre.Contains(de)&& s.Estatus=="Activo");
-
-
-            }
-
-          
-
-            return View(empleados.ToList());
-           
-        }
+                empleados= empleados.Where(s =>s.departamento.Nombre.Contains(de) && s.Estatus=="Activo");
+           }
+              return View(empleados.ToList());
+          }
 
         // GET: Empleados/Details/5
         public ActionResult Details(int? id)
