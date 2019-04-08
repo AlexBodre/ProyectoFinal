@@ -15,10 +15,28 @@ namespace ProyectoFinal.Controllers
         private FINALContext db = new FINALContext();
 
         // GET: Empleados
-        public ActionResult Index()
+        public ActionResult Index(string no, string de)
         {
             var empleados = db.Empleados.Include(e => e.cargo).Include(e => e.departamento);
+
+            var n = from s in db.Empleados where (s.Estatus == "Activo") select s;
+            if (!string.IsNullOrEmpty(no))
+            {
+                empleados = empleados.Where(s=>s.Estatus=="Activo" && s.Nombre.Contains(no));
+
+                return View(empleados.ToList());
+            }
+            else if (!string.IsNullOrEmpty(de))
+            {
+                empleados= empleados.Where(s =>s.departamento.Nombre.Contains(de)&& s.Estatus=="Activo");
+
+
+            }
+
+          
+
             return View(empleados.ToList());
+           
         }
 
         // GET: Empleados/Details/5

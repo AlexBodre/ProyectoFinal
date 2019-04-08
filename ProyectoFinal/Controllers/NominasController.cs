@@ -18,22 +18,22 @@ namespace ProyectoFinal.Controllers
         public ActionResult Index(string fechanom, string fechaye)
 
         {
-            var nombres = from s in db.Nominas
-                          select s;
+            var nom = from n in db.Nominas
+                          select n;
 
             if (!string.IsNullOrEmpty(fechanom))
             {
                 int fechax = Int32.Parse(fechanom);
-                nombres = nombres.Where(s => s.Mes==fechax);
+                nom = nom.Where(n => n.Mes==fechax);
             }
             if (!string.IsNullOrEmpty(fechaye))
             {
                 int an = Int32.Parse(fechaye);
-                nombres = nombres.Where(s => s.AÑO == an);
+                nom = nom.Where(n => n.AÑO == an);
             }
             
             
-            return View(nombres.ToList());
+            return View(nom.ToList());
         }
 
         // GET: Nominas/Details/5
