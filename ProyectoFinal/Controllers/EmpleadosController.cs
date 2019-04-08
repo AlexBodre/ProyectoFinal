@@ -20,16 +20,29 @@ namespace ProyectoFinal.Controllers
             var empleados = db.Empleados.Include(e => e.cargo).Include(e => e.departamento);
 
             var n = from s in db.Empleados where (s.Estatus == "Activo") select s;
-            if (!string.IsNullOrEmpty(no))
+
+            if (!String.IsNullOrEmpty(de) && !String.IsNullOrEmpty(no))
             {
-                empleados = empleados.Where(s=>s.Estatus=="Activo" && s.Nombre.Contains(no));
+                empleados = empleados.Where(s => s.Estatus == "Activo" && s.Nombre.Contains(no) && s.departamento.Nombre == de);
 
                 return View(empleados.ToList());
             }
-            else if (!string.IsNullOrEmpty(de))
+
+
+            if (!String.IsNullOrEmpty(no) && String.IsNullOrEmpty(de))
+            {
+                empleados = empleados.Where(s =>s.Estatus=="Activo" && s.Nombre.Contains(no));
+
+                return View(empleados.ToList());
+            }
+             if (!String.IsNullOrEmpty(de) && String.IsNullOrEmpty(no))
             {
                 empleados= empleados.Where(s =>s.departamento.Nombre.Contains(de) && s.Estatus=="Activo");
-           }
+                return View(empleados.ToList());
+            }
+
+
+
               return View(empleados.ToList());
           }
 
