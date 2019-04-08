@@ -14,6 +14,14 @@ namespace ProyectoFinal.Controllers
     {
         private FINALContext db = new FINALContext();
 
+
+        public ActionResult Inactivos()
+        {
+            var n = from s in db.Empleados where (s.Estatus == "Inactivo") select s;
+
+            return View(n.ToList());
+        }
+
         // GET: Empleados
         public ActionResult Index(string no, string de)
         {
