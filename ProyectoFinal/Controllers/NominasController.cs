@@ -15,9 +15,25 @@ namespace ProyectoFinal.Controllers
         private FINALContext db = new FINALContext();
 
         // GET: Nominas
-        public ActionResult Index()
+        public ActionResult Index(string fechanom, string fechaye)
+
         {
-            return View(db.Nominas.ToList());
+            var nombres = from s in db.Nominas
+                          select s;
+
+            if (!string.IsNullOrEmpty(fechanom))
+            {
+                int fechax = Int32.Parse(fechanom);
+                nombres = nombres.Where(s => s.Mes==fechax);
+            }
+            if (!string.IsNullOrEmpty(fechaye))
+            {
+                int an = Int32.Parse(fechaye);
+                nombres = nombres.Where(s => s.AÑO == an);
+            }
+            
+            
+            return View(nombres.ToList());
         }
 
         // GET: Nominas/Details/5
@@ -122,6 +138,9 @@ namespace ProyectoFinal.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+       
+     
 
         protected override void Dispose(bool disposing)
         {

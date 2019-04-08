@@ -17,16 +17,8 @@ namespace ProyectoFinal.Models
         [ForeignKey("Empleado")]
         [Required]
         public int IdEmpleado { get; set; }
-        
-
-
         [Required]
         public int CorrespondientealAÑO { get; set; }
-
-
-        [Required]
-        public string Comentarios { get; set; }
-
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
@@ -35,5 +27,9 @@ namespace ProyectoFinal.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Hasta { get; set; }
+
+        [Required]
+        public string Comentarios { get; set; }
+
     }
 }
