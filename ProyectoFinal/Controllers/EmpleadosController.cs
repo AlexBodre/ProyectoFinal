@@ -22,6 +22,21 @@ namespace ProyectoFinal.Controllers
             return View(n.ToList());
         }
 
+
+        public ActionResult Entradas(string fecha)
+        {
+            var empleados = db.Empleados.Include(e => e.cargo).Include(e => e.departamento);
+
+            if (!String.IsNullOrEmpty(fecha))
+            {
+                string klk = $"{fecha}-01-1900";
+                DateTime kitipun = DateTime.ParseExact(klk, "MM-dd-yyyy", null);
+                empleados = empleados.Where(a => a.FechaIngreso.Month == kitipun.Month);
+            }
+
+            return View(empleados.ToList());
+        }
+
         // GET: Empleados
         public ActionResult Index(string no, string de)
         {

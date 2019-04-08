@@ -280,6 +280,7 @@
     <Content Include="Views\Salidas\Edit.cshtml" />
     <Content Include="Views\Salidas\Index.cshtml" />
     <Content Include="Views\Empleados\Inactivos.cshtml" />
+    <Content Include="Views\Empleados\Entradas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
