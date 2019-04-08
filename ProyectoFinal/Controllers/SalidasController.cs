@@ -53,13 +53,27 @@ namespace ProyectoFinal.Controllers
         {
             if (ModelState.IsValid)
             {
+                var query = (from emp in db.Empleados
+                             where emp.Id == salidas.IdEmpleado
+                             select emp).First();
+
+                query.Estatus = "Inactivo";
+
+                
                 db.Salidas.Add(salidas);
                 db.SaveChanges();
                 return RedirectToAction("Index");
+
+
             }
 
             ViewBag.IdEmpleado = new SelectList(db.Empleados, "Id", "Nombre", salidas.IdEmpleado);
             ViewBag.IdTipoSalidas = new SelectList(db.TipoSalida, "Id", "Nombre", salidas.IdTipoSalidas);
+
+
+            
+
+
             return View(salidas);
         }
 
