@@ -8,37 +8,38 @@
 
 @{ 
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.cargo.Cargo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.departamento.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CodigoEmpleado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Apellido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Telefono)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaIngreso)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Salario)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estatus)
-        </th>
-        <th></th>
-    </tr>
-
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.cargo.Cargo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.departamento.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaIngreso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
 @foreach (var item in Model) {
     <tr>
         <td>

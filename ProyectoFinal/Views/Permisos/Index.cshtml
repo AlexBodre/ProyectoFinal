@@ -14,30 +14,31 @@
     <div class="form-actions no-color d-flex justify-content-between">
         <input type="search" name="nomb" value="" class="form-control" placeholder="Buscar por nombre...">
 
-        <input type="submit" value="Buscar" class="btn btn-outline-danger form-control" />
-        <a href="http://localhost:58667/Permisos" class="btn btn-outline-danger form-control">Volver a Lista</a>
+        <input type="submit" value="Buscar" class="btn btn-danger form-control" />
+        <a href="http://localhost:58667/Permisos" class="btn btn-primary form-control">Volver a Lista</a>
     </div>
 }
 
 
 
     <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Empleado.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Desde)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hasta)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Comentarios)
-            </th>
-            <th></th>
-        </tr>
-
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empleado.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Desde)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hasta)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Comentarios)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
         @foreach (var item in Model)
         {
             <tr>

@@ -85,26 +85,27 @@
 
         </select>
 
-        <input type="submit" value="Buscar" class="btn btn-outline-danger form-control" />
-        <a href="http://localhost:58667/Nominas" class="btn btn-outline-danger form-control">Volver a Lista</a>
+        <input type="submit" value="Buscar" class="btn btn-danger form-control" />
+        <a href="http://localhost:58667/Nominas" class="btn btn-primary form-control">Volver a Lista</a>
     </div>
     }
 
  
     <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.AÑO)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Mes)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Montototal)
-            </th>
-            <th></th>
-        </tr>
-
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AÑO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Montototal)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
         @foreach (var item in Model)
         {
             <tr>
